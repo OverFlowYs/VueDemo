@@ -1,0 +1,52 @@
+<!-- 
+    2019-03-07
+    Vue input
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Vue</title>
+ </head>
+ <body>
+     <div id="app">
+        <div v-bind:id="divId" @click="add()">
+            111111
+            <p v-if="seen">www</p>
+        </div>
+    </div>
+
+    <div id="app2">
+        <p>{{ mes }}</p>
+        <input type="text" v-model="mes">
+    </div>
+ </body>
+ <script src="../js/vue.js"></script>
+ <script src="../js/jquery-2.0.3.min.js"></script>
+ <script>
+
+     var vm = new Vue({
+         el:"#app",
+         data:{
+             divId:"aaa",
+             seen:true
+         },
+         methods: {
+             add:function(){
+                let a = divId.text();
+                console.log(a);
+             }
+         },
+     })
+
+     var app6 = new Vue({
+        el: '#app2',
+        data: {
+            mes: 'Hello Vue!'
+        }
+    })
+     
+ </script>
+ </html>
